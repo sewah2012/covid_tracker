@@ -11,7 +11,7 @@ class Loading extends StatefulWidget {
 
 class _LoadingState extends State<Loading> {
   void setInfo()async{
-    Country country = Country(image: 'usa.png',country: 'USA');
+    Country country = Country(image: 'ma.png',country: 'Morocco');
     await country.getInfo();
     Navigator.pushReplacementNamed(context, '/home',arguments: {
       'image': country.image,

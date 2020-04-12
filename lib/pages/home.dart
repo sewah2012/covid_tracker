@@ -14,6 +14,15 @@ class _HomeState extends State<Home> {
 //    print(info['tConfirmed']);
 
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+
+
+        },
+
+        backgroundColor: Colors.red,
+        child: Text('Details'),
+      ),
       backgroundColor: Colors.blue,
       body: SafeArea(
         child: Container(
@@ -72,13 +81,13 @@ class _HomeState extends State<Home> {
                 SizedBox(height: 5,),
                 Text('Country'),
                 Divider(
-                    height: 30.0,
+                    height: 15.0,
                     color: Colors.blue[700]
                 ),
 
                 Text(info['tConfirmed'],
                 style: TextStyle(
-                  fontSize: 45,
+                  fontSize: 30,
                   color: Colors.blue
                 ),),
                 Text('Total Confirmed cases'),
@@ -89,24 +98,24 @@ class _HomeState extends State<Home> {
 
                 Text(info['tRecovered'],
                   style: TextStyle(
-                      fontSize: 45,
+                      fontSize: 30,
                       color: Colors.green
                   ),),
                 Text('Total Recovered'),
                 Divider(
-                    height: 30.0,
+                    height: 20.0,
                     color: Colors.blue[700]
                 ),
 
                 Text(info['tDeaths'],
                   style: TextStyle(
-                      fontSize: 45,
+                      fontSize: 30,
                       color: Colors.red
                   ),),
                 Text('Total Death'),
 
                 Divider(
-                    height: 30.0,
+                    height: 20.0,
                     color: Colors.blue[700]
                 ),
 

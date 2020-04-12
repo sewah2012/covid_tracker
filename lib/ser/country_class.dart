@@ -18,7 +18,7 @@ class Country{
       lastUpdate = info['lastUpdate'].toString().substring(0,10);
     }catch(e){
       print('Data too too long! : $e');
-      country = 'Info not found!';
+      country = 'Problem retriving Data';
     }
 
 
