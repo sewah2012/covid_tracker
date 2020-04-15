@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -14,15 +13,6 @@ class _HomeState extends State<Home> {
 //    print(info['tConfirmed']);
 
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-
-
-        },
-
-        backgroundColor: Colors.red,
-        child: Text('Details'),
-      ),
       backgroundColor: Colors.blue,
       body: SafeArea(
         child: Container(
@@ -73,7 +63,7 @@ class _HomeState extends State<Home> {
                  children: <Widget>[
                    Text(info['country'],
                    style: TextStyle(
-                     fontSize: 30,
+                     fontSize: 25,
                      letterSpacing: 2.0
                    ),),
                  ],

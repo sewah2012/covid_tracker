@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:covidtracker/ser/country_class.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-//import 'package:http/http.dart';
-//import 'dart:convert';
 
 class Loading extends StatefulWidget {
   @override

@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:covidtracker/ser/country_class.dart';
-import 'package:http/http.dart';
 
 class CountryList extends StatefulWidget {
   @override
@@ -20,7 +19,7 @@ class _CountryListState extends State<CountryList> {
     Country(image: 'ae.png',country: 'United Arab Emirates'),
     Country(image: 'af.png',country: 'Afghanistan'),
     Country(image: 'ag.png',country: 'Antigua and Barbuda'),
-    Country(image: 'ai.png',country: 'Anguilla'),
+
     Country(image: 'bd.png',country: 'Bangladesh'),
     Country(image: 'am.png',country: 'Armenia'),
     Country(image: 'an.png',country: 'Angola'),
@@ -47,10 +46,10 @@ class _CountryListState extends State<CountryList> {
     Country(image: 'ca.png',country: 'Canada'),
     Country(image: 'cf.png',country: 'Central African Republic'),
     Country(image: 'td.png',country: 'Chad'),
-    Country(image: 'ci.png',country: "C\u00f4te d'Ivoire"),
+    Country(image: 'ci.png',country: "Ivory Coast"),
     Country(image: 'cl.png',country: 'Chile'),
     Country(image: 'cm.png',country: 'Cameroon'),
-    Country(image: 'cn.png',country: 'china'),
+    Country(image: 'cn.png',country: 'China'),
     Country(image: 'cl.png',country: 'Chile'),
     Country(image: 'co.png',country: 'Colombia'),
     Country(image: 'cbr.png',country: 'Congo (Brazzaville)'),
@@ -173,7 +172,7 @@ class _CountryListState extends State<CountryList> {
     Country(image: 'tg.png',country: 'Togo'),
     Country(image: 'tt.png',country: 'Trinidad and Tobago'),
     Country(image: 'tr.png',country: 'Turkey'),
-    Country(image: 'us.png',country: 'USA'),
+    Country(image: 'us.png',country: 'United States of America'),
     Country(image: 'ug.png',country: 'Uganda'),
     Country(image: 'ua.png',country: 'Ukraine'),
     Country(image: 'ae.png',country: 'United Arab Emirates'),
