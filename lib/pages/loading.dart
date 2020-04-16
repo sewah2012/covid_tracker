@@ -9,15 +9,31 @@ class Loading extends StatefulWidget {
 
 class _LoadingState extends State<Loading> {
   void setInfo()async{
-    Country country = Country(image: 'ma.png',country: 'Morocco');
+    Country country = Country(image: 'ma.png',country: 'United States of America');
     await country.getInfo();
     Navigator.pushReplacementNamed(context, '/home',arguments: {
       'image': country.image,
       'country': country.country,
+
       'tConfirmed': country.tConfirmed,
       'tRecovered': country.tRecovered,
-      'tDeaths': country.tDeath,
+      'tDeath': country.tDeath,
+
       'lastUpdate':country.lastUpdate,
+
+      'nConfirmed': country.nConfirmed,
+      'nRecovered': country.nRecovered,
+      'nDeath': country.nDeath,
+
+//      'ngConfirmed': country.ngConfirmed,
+//      'ngRecovered': country.nRecovered,
+//      'ngDeath': country.ngDeath,
+//
+//      'tgConfirmed': country.tgConfirmed,
+//      'tgRecovered': country.tgRecovered,
+//      'tgDeath': country.tgDeath,
+
+
     });
   }
   @override

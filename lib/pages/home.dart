@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -18,26 +19,43 @@ class _HomeState extends State<Home> {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/bgcapp.jpg'),
+              image: AssetImage('assets/ngm.jpg'),
               fit: BoxFit.cover
             )
           ),
 
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(0, 90, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
             child: Column(
               children: <Widget>[
                 RaisedButton.icon(onPressed: ()async{
                   dynamic results = await Navigator.pushNamed(context, '/country_list');
                   setState(() {
                     info = {
-                      'address':results['address'],
+//                      'ngConfirmed':results['ngConfirmed'],
+//                      'ngRecovered':results['ngRecovered'],
+//                      'ngDeath':results['ngDeath'],
+//                      'tgConfirmed':results['tgConfirmed'],
+//                      'tgRecovered':results['tgRecovered'],
+//                      'tgDeath':results['tgDeath'],
+
+                      'nConfirmed': results['nConfirmed'],
+                      'nRecovered': results['nRecovered'],
+                      'nDeath': results['nDeath'],
+
                       'image': results['image'],
+
                       'country': results['country'],
+
                       'tConfirmed': results['tConfirmed'],
                       'tRecovered': results['tRecovered'],
-                      'tDeaths': results['tDeaths'],
-                      'lastUpdate':results['lastUpdate']
+                      'tDeath': results['tDeath'],
+
+                      'lastUpdate':results['lastUpdate'],
+
+
+
+
                     };
                   });
 
@@ -47,7 +65,8 @@ class _HomeState extends State<Home> {
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.blueGrey
-                    ),)),
+                    ),)
+                ),
 
                 SizedBox(height: 30,),
 
@@ -56,15 +75,22 @@ class _HomeState extends State<Home> {
                       fontSize: 20,
                       color: Colors.red
                   ),),
-                Text('Last update'),
+                Text('Last update',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2.0,
+                  fontSize: 20
+                )),
+
                 SizedBox(height: 30,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                  children: <Widget>[
                    Text(info['country'],
                    style: TextStyle(
-                     fontSize: 25,
-                     letterSpacing: 2.0
+                     fontSize: 30,
+                     letterSpacing: 2.0,
+                     fontWeight: FontWeight.bold,
                    ),),
                  ],
                 ),
@@ -75,35 +101,163 @@ class _HomeState extends State<Home> {
                     color: Colors.blue[700]
                 ),
 
-                Text(info['tConfirmed'],
-                style: TextStyle(
-                  fontSize: 30,
-                  color: Colors.blue
-                ),),
-                Text('Total Confirmed cases'),
-                Divider(
-                    height: 30.0,
-                    color: Colors.blue[700]
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.blue, width: 1.5),
+                            color: Colors.white,
+                          ),
+                          padding: EdgeInsets.all(5),
+                          margin: EdgeInsets.fromLTRB(0, 0, 0, 5),
+                          child: Column(
+                          children: <Widget>[
+                            Text(info['tConfirmed'],
+                            style: TextStyle(
+                              fontSize: 50,
+                              color: Colors.blue,
+                            ),),
+                            Text('Total Confirmed',
+                              style: TextStyle(
+                                letterSpacing: 2.0,
+                                color: Colors.red[900],
+                                fontWeight: FontWeight.bold,
+                              ),),
+                          ],),
+                        ),
+
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.blue, width: 1.5),
+                            color: Colors.white,
+                          ),
+                          padding: EdgeInsets.all(5),
+                          margin: EdgeInsets.fromLTRB(0, 0, 0, 5),
+                          child: Column(
+                            children: <Widget>[
+                              Text(info['tRecovered'],
+                                style: TextStyle(
+                                    fontSize: 50,
+                                    color: Colors.green
+                                ),),
+                              Text('Total Recovered',
+                                style: TextStyle(
+                                  letterSpacing: 2.0,
+                                  color: Colors.red[900],
+                                  fontWeight: FontWeight.bold,
+                                ),),
+                            ],),
+                        ),
+
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.blue, width: 1.5),
+                            color: Colors.white,
+                          ),
+
+                          padding: EdgeInsets.all(5),
+                          margin: EdgeInsets.fromLTRB(0, 0, 0, 5),
+                          child: Column(
+                            children: <Widget>[
+                              Text(info['tDeath'],
+                                style: TextStyle(
+                                    fontSize: 50,
+                                    color: Colors.red,
+                                ),),
+                              Text('Total Death',
+                                style: TextStyle(
+                                  letterSpacing: 2.0,
+                                  color: Colors.red[900],
+                                  fontWeight: FontWeight.bold,
+                                ),),
+                            ],),
+                        ),
+
+                      ],
+                    ),
+
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.blue, width: 1.5),
+                            color: Colors.white,
+                          ),
+                          padding: EdgeInsets.all(5),
+                          margin: EdgeInsets.fromLTRB(0, 0, 0, 5),
+                          child: Column(
+                            children: <Widget>[
+                              Text(info['nConfirmed'],
+                                style: TextStyle(
+                                  fontSize: 50,
+                                  color: Colors.blue,
+                                ),),
+                              Text('New Confirmed',
+                                style: TextStyle(
+                                  letterSpacing: 2.0,
+                                  color: Colors.red[900],
+                                  fontWeight: FontWeight.bold,
+                                ),),
+                            ],),
+                        ),
+
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.blue, width: 1.5),
+                            color: Colors.white,
+                          ),
+                          padding: EdgeInsets.all(5),
+                          margin: EdgeInsets.fromLTRB(0, 0, 0, 5),
+                          child: Column(
+                            children: <Widget>[
+                              Text(info['nRecovered'],
+                                style: TextStyle(
+                                    fontSize: 50,
+                                    color: Colors.green
+                                ),),
+                              Text('New Recovered',
+                                style: TextStyle(
+                                  letterSpacing: 2.0,
+                                  color: Colors.red[900],
+                                  fontWeight: FontWeight.bold,
+                                ),),
+                            ],),
+                        ),
+
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.blue, width: 1.5),
+                            color: Colors.white,
+                          ),
+
+                          padding: EdgeInsets.all(5),
+                          margin: EdgeInsets.fromLTRB(0, 0, 0, 5),
+                          child: Column(
+                            children: <Widget>[
+                              Text(info['nDeath'],
+                                style: TextStyle(
+                                  fontSize: 50,
+                                  color: Colors.orange,
+                                ),),
+                              Text('New Deaths',
+                                style: TextStyle(
+                                  letterSpacing: 2.0,
+                                  color: Colors.red[900],
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],),
+                        ),
+
+                      ],
+                    ),
+                  ],
                 ),
-
-                Text(info['tRecovered'],
-                  style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.green
-                  ),),
-                Text('Total Recovered'),
-                Divider(
-                    height: 20.0,
-                    color: Colors.blue[700]
-                ),
-
-                Text(info['tDeaths'],
-                  style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.red
-                  ),),
-                Text('Total Death'),
-
                 Divider(
                     height: 20.0,
                     color: Colors.blue[700]

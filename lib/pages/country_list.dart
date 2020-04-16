@@ -46,7 +46,7 @@ class _CountryListState extends State<CountryList> {
     Country(image: 'ca.png',country: 'Canada'),
     Country(image: 'cf.png',country: 'Central African Republic'),
     Country(image: 'td.png',country: 'Chad'),
-   // Country(image: 'ci.png',country: "Cote d'Ivoire"),
+    Country(image: 'ci.png',country: "Ivory Coast"),
     Country(image: 'cl.png',country: 'Chile'),
     Country(image: 'cm.png',country: 'Cameroon'),
     Country(image: 'cn.png',country: 'China'),
@@ -172,7 +172,7 @@ class _CountryListState extends State<CountryList> {
     Country(image: 'tg.png',country: 'Togo'),
     Country(image: 'tt.png',country: 'Trinidad and Tobago'),
     Country(image: 'tr.png',country: 'Turkey'),
-    Country(image: 'us.png',country: 'USA'),
+    Country(image: 'us.png',country: 'United States of America'),
     Country(image: 'ug.png',country: 'Uganda'),
     Country(image: 'ua.png',country: 'Ukraine'),
     Country(image: 'ae.png',country: 'United Arab Emirates'),
@@ -185,9 +185,7 @@ class _CountryListState extends State<CountryList> {
     Country(image: 'ye.png',country: "Yemen"),
     Country(image: 'zm.png',country: 'Zambia'),
     Country(image: 'zw.png',country: 'Zimbabwe'),
-
   ];
-
 
   void updateInfo(index)async{
     Country ctr = countries[index];
@@ -197,8 +195,17 @@ class _CountryListState extends State<CountryList> {
       'country': ctr.country,
       'tConfirmed': ctr.tConfirmed,
       'tRecovered': ctr.tRecovered,
-      'tDeaths': ctr.tDeath,
-      'lastUpdate':ctr.lastUpdate
+      'tDeath': ctr.tDeath,
+
+      'nConfirmed': ctr.nConfirmed,
+      'nRecovered': ctr.nRecovered,
+      'nDeath': ctr.nDeath,
+
+      'ngConfirmed': ctr.ngConfirmed,
+      'ngRecovered': ctr.ngRecovered,
+      'ngDeath': ctr.ngDeath,
+
+      'lastUpdate':ctr.lastUpdate,
     });
   }
   @override
