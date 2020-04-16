@@ -46,7 +46,7 @@ class _CountryListState extends State<CountryList> {
     Country(image: 'ca.png',country: 'Canada'),
     Country(image: 'cf.png',country: 'Central African Republic'),
     Country(image: 'td.png',country: 'Chad'),
-    Country(image: 'ci.png',country: "Ivory Coast"),
+    Country(image: 'ci.png',country: "Côte d'Ivoire"),
     Country(image: 'cl.png',country: 'Chile'),
     Country(image: 'cm.png',country: 'Cameroon'),
     Country(image: 'cn.png',country: 'China'),

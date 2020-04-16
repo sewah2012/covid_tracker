@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
           ),
 
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
             child: Column(
               children: <Widget>[
                 RaisedButton.icon(onPressed: ()async{
@@ -53,9 +53,6 @@ class _HomeState extends State<Home> {
 
                       'lastUpdate':results['lastUpdate'],
 
-
-
-
                     };
                   });
 
@@ -68,34 +65,39 @@ class _HomeState extends State<Home> {
                     ),)
                 ),
 
-                SizedBox(height: 30,),
+                SizedBox(height: 20,),
 
                 Text(info['lastUpdate'],
                   style: TextStyle(
                       fontSize: 20,
-                      color: Colors.red
+                      color: Colors.red,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 2.0,
                   ),),
                 Text('Last update',
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
                   letterSpacing: 2.0,
-                  fontSize: 20
+                  fontSize: 15
                 )),
 
-                SizedBox(height: 30,),
+                SizedBox(height: 15,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                  children: <Widget>[
                    Text(info['country'],
                    style: TextStyle(
-                     fontSize: 30,
-                     letterSpacing: 2.0,
+                     color: Colors.black87,
+                     fontSize: 20,
+                     letterSpacing: 3.0,
                      fontWeight: FontWeight.bold,
                    ),),
                  ],
                 ),
                 SizedBox(height: 5,),
-                Text('Country'),
+                Text('Country',
+                style: TextStyle(
+                  color: Colors.red
+                ),),
                 Divider(
                     height: 15.0,
                     color: Colors.blue[700]
@@ -268,12 +270,22 @@ class _HomeState extends State<Home> {
                       fontSize: 15,
                       color: Colors.red
                   ),),
+
                 Text('Emmanuel S. Sewah', style:
                   TextStyle(
                     fontSize: 15,
                     letterSpacing: 2.0,
                     color: Colors.indigo
                   ),),
+                Container(
+                  color: Colors.white,
+                  child: Text('email: sewah2012@gmail.com | IG: _undefvar)', style:
+                  TextStyle(
+                      fontSize: 13,
+                      letterSpacing: 2.0,
+                      color: Colors.indigo
+                  ),),
+                ),
 
               ],
             ),

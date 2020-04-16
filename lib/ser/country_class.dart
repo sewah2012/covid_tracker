@@ -36,23 +36,24 @@ class Country{
 
       //country level data
 
-      print(info['Countries'].elementAt(0)['Country']);
-
       for(int i = 0; i < info['Countries'].length; i++){
           if(info['Countries'].elementAt(i)['Country']==country){
               tConfirmed= info['Countries'].elementAt(i)['TotalConfirmed'].toString();
-//              print(tConfirmed);
               tRecovered = info['Countries'].elementAt(i)['TotalRecovered'].toString();
               tDeath = info['Countries'].elementAt(i)['TotalDeaths'].toString();
               ngRecovered = info['Countries'].elementAt(i)['TotalConfirmed'].toString();
-              lastUpdate = info['Countries'].elementAt(i)['Date'].toString();
               nDeath = info['Countries'].elementAt(i)['NewDeaths'].toString();
               nConfirmed = info['Countries'].elementAt(i)['NewConfirmed'].toString();
               nRecovered = info['Countries'].elementAt(i)['NewRecovered'].toString();
+              lastUpdate = info['Countries'].elementAt(i)['Date'].toString().substring(0,10);
+
+              DateTime date = DateTime.parse(info['Countries'].elementAt(i)['Date']);
+              lastUpdate = DateFormat.yMMMEd().format(date);
+
+
          }
       }
 
-      print(nDeath);
 
 //      print(lastUpdate);
 //      int ind = info.length-1;
